@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younes El Foudil | Portfolio</title>
+    <!-- تضمين Tailwind CSS الرسمي -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // إعدادات مخصصة لـ Tailwind لمطابقة بعض التفاصيل
+        tailwind.config = {
+            theme: {
+                extend: {
+                    scale: {
+                        '103': '1.03',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* ستايل مخصص للتحديد (Selection) */
+        ::selection {
+            background-color: #0ea5e9;
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#030712] text-slate-100 font-sans tracking-wide">
+
+    <!-- شريط التنقل (Navbar) -->
+    <nav class="sticky top-0 z-50 bg-[#030712]/80 backdrop-blur-md border-b border-slate-900/80 px-4 sm:px-8 py-4 flex justify-between items-center">
+        <div class="text-sm font-black tracking-widest text-white font-mono hover:text-sky-400 cursor-pointer">
+            YOUNES<span class="text-sky-400">.DEV</span>
+        </div>
+        
+        <!-- القائمة لمتصفحي الحاسوب (Desktop) -->
+        <div class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-400" id="desktop-menu">
+            <a href="#about" class="hover:text-white transition-colors" data-t="navAbout">About</a>
+            <a href="#skills" class="hover:text-white transition-colors" data-t="navSkills">Skills & Languages</a>
+            <a href="#certifications" class="hover:text-white transition-colors" data-t="navCertifications">Certifications</a>
+            <a href="#projects" class="hover:text-white transition-colors" data-t="navProjects">Projects</a>
+            <a href="#contact" class="hover:text-white transition-colors" data-t="navContact">Contact</a>
+        </div>
+
+        <!-- زر تغيير اللغة للحاسوب -->
+        <div class="hidden md:flex items-center">
+            <button id="lang-btn-desktop" class="px-3 py-1.5 bg-slate-900 border border-slate-800 rounded-lg text-xs font-medium hover:bg-slate-800 transition-all flex items-center gap-1.5">
+                🌐 العربية
+            </button>
+        </div>
+
+        <!-- أزرار التحكم في التلفون (Mobile) -->
+        <div class="flex items-center gap-2 md:hidden">
+            <button id="lang-btn-mobile" class="px-2 py-1 bg-slate-900 border border-slate-800 rounded-lg text-xs">
+                🌐 AR
+            </button>
+            <button id="menu-toggle" class="p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                <svg id="menu-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- القائمة المنسدلة للتلفون (Mobile Menu) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[57px] z-40 bg-[#030712] border-b border-slate-900 px-6 py-6 flex flex-col gap-4 text-sm font-semibold text-slate-400 shadow-xl">
+        <a href="#about" class="mobile-link hover:text-white py-1" data-t="navAbout">About</a>
+        <a href="#skills" class="mobile-link hover:text-white py-1" data-t="navSkills">Skills & Languages</a>
+        <a href="#certifications" class="mobile-link hover:text-white py-1" data-t="navCertifications">Certifications</a>
+        <a href="#projects" class="mobile-link hover:text-white py-1" data-t="navProjects">Projects</a>
+        <a href="#contact" class="mobile-link hover:text-white py-1" data-t="navContact">Contact</a>
+    </div>
+
+    <!-- قسم الترحيب (Hero Section) -->
+    <section id="about" class="max-w-4xl mx-auto text-center px-4 pt-20 sm:pt-28 pb-16 sm:pb-24 flex flex-col items-center">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-[11px] sm:text-xs font-semibold mb-6" data-t="badge">
+            Welcome to my coding world 🚀
+        </span>
+        <h1 id="hero-title" class="text-2xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight sm:leading-none mb-6 max-w-3xl">
+            I build <span class='text-sky-400 font-extrabold'>interactive</span> and professional web interfaces
+        </h1>
+        <p class="text-xs sm:text-base text-slate-400 max-w-xl mb-8 leading-relaxed px-2" data-t="heroDesc">
+            I am a passionate developer focused on building fast, clean, and fully responsive web applications using React and Tailwind CSS.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto px-4 sm:px-0">
+            <a href="#projects" class="px-6 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-xl text-xs sm:text-sm font-semibold text-center shadow-lg shadow-sky-500/20 transition-all" data-t="btnBrowse">
+                Browse Projects
+            </a>
+            <a href="#contact" class="px-6 py-3 bg-slate-900 border border-slate-800 hover:bg-slate-800 text-slate-200 rounded-xl text-xs sm:text-sm font-semibold text-center transition-all" data-t="btnContact">
+                Contact Me
+            </a>
+        </div>
+    </section>
+
+    <!-- المهارات واللغات (Skills & Languages) -->
+    <section id="skills" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-slate-900">
+        <div class="text-center mb-10 sm:mb-12">
+            <h2 class="text-xl sm:text-3xl font-bold mb-2" data-t="skillsTitle">Skills & Languages</h2>
+            <p class="text-xs sm:text-base text-slate-400" data-t="skillsDesc">Technologies I use and languages I speak.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:grid-cols-1 lg:gap-8">
+            <div class="bg-slate-900/30 p-5 sm:p-6 rounded-2xl border border-slate-900/60">
+                <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-sky-400 mb-4" data-t="techTitle">Technical Skills</h3>
+                <div class="flex flex-wrap gap-2" id="skills-list">
+                    <!-- المهارات غاتزاد بـ JS -->
+                </div>
+            </div>
+            <div class="bg-slate-900/30 p-5 sm:p-6 rounded-2xl border border-slate-900/60">
+                <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-sky-400 mb-4" data-t="langTitle">Languages</h3>
+                <ul class="space-y-3 text-xs sm:text-sm" id="languages-list">
+                    <!-- اللغات غاتزاد بـ JS بشكل ديناميكي حسب اللغة المفعّلة -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- الشهادات (Certifications) -->
+    <section id="certifications" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-slate-900">
+        <div class="text-center mb-10 sm:mb-12">
+            <h3 class="text-xl sm:text-3xl font-bold mb-2" data-t="certsTitle">Certifications</h3>
+            <p class="text-xs sm:text-base text-slate-400" data-t="certsDesc">Certificates earned to validate my software engineering and frontend skills.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6" id="certifications-container">
+            <!-- الكروت ديال الشهادات غايتنشؤوا هنا بـ JavaScript -->
+        </div>
+    </section>
+
+    <!-- المشاريع المميزة (Featured Projects) -->
+    <section id="projects" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 border-t border-slate-900">
+        <div class="text-center mb-8 sm:mb-10">
+            <h2 class="text-xl sm:text-3xl font-bold mb-2" data-t="projectsTitle">Featured Projects</h2>
+            <p class="text-xs sm:text-base text-slate-400" data-t="projectsDesc">A collection of projects built to strengthen my software development skills.</p>
+        </div>
+
+        <!-- أزرار الفلترة (Filters) -->
+        <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10" id="filter-buttons">
+            <!-- الأزرار غايتزادوا بـ JavaScript -->
+        </div>
+
+        <!-- شبكة المشاريع (Projects Grid) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="projects-container">
+            <!-- كروت المشاريع غاتبنوا هنا ديناميكياً -->
+        </div>
+    </section>
+
+    <!-- السيرة الذاتية (CV Section) -->
+    <section class="max-w-xl mx-auto text-center px-4 py-12 sm:py-16 border-t border-slate-900">
+        <h3 class="text-lg sm:text-xl font-bold text-white mb-1" data-t="cvTitle">Curriculum Vitae</h3>
+        <p class="text-[11px] sm:text-xs text-slate-400 mb-6" data-t="cvDesc">ATS-Friendly Format — Ready for Recruitment</p>
+        <a href="./files/Younes_El_Foudil.pdf" download class="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-emerald-500 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-md transition-all" data-t="btnDownload">
+            📥 Download PDF
+        </a>
+    </section>
+
+    <!-- الاتصال (Contact Section) -->
+    <section id="contact" class="max-w-2xl mx-auto px-4 py-16 sm:py-20 border-t border-slate-900">
+        <div class="text-center mb-8 sm:mb-10">
+            <h2 class="text-xl sm:text-3xl font-bold mb-2" data-t="contactTitle">Contact Me</h2>
+            <p class="text-xs sm:text-base text-slate-400" data-t="contactDesc">Have a project or opportunity? Feel free to drop a message!</p>
+            <p class="text-[11px] sm:text-xs text-slate-500 mt-2 flex items-center justify-center gap-1" id="location-text">📍 Taroudant, Morocco</p>
+        </div>
+
+        <form onsubmit="event.preventDefault();" class="space-y-4 px-2 sm:px-0">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="full-name" class="block text-[10px] sm:text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider" data-t="inputName">Full Name</label>
+                    <input id="full-name" type="text" title="Full Name" placeholder="Your full name" class="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-sky-500 transition-colors" />
+                </div>
+                <div>
+                    <label for="email-address" class="block text-[10px] sm:text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider" data-t="inputEmail">Email Address</label>
+                    <input id="email-address" type="email" title="Email Address" placeholder="you@example.com" class="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-sky-500 transition-colors" />
+                </div>
+            </div>
+            <div>
+                <label class="block text-[10px] sm:text-xs font-semibold text-slate-400 mb-1.5 uppercase tracking-wider" for="message" data-t="inputMessage">Message</label>
+                <textarea id="message" title="Message" rows="4" placeholder="Enter your message..." class="w-full bg-slate-950 border border-slate-900 rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-sky-500 transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3 sm:py-3.5 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl text-xs sm:text-sm transition-colors" data-t="btnSend">
+                Send Message
+            </button>
+        </form>
+    </section>
+
+    <!-- أسفل الصفحة (Footer) -->
+    <footer class="text-center py-6 sm:py-8 border-t border-slate-900/60 bg-slate-950/20">
+        <p id="footer-text" class="text-[9px] sm:text-xs font-mono text-slate-500 uppercase tracking-widest px-4">
+            © 2026 YOUNES EL FOUDIL. Built with passion.
+        </p>
+    </footer>
+
+    <!-- ربط كود الـ JavaScript الاستراتيجي لتشغيل الصفحة -->
+    <script src="script.js"></script>
+</body>
+</html>
