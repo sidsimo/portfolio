@@ -36,7 +36,6 @@ Ready for language switching (Arabic/English).
 ## 🛠️ Tech Stack & Skills
 
 ### Frontend & Frameworks
-- React.js: Component-based UI development.
 - JavaScript (ES6+): Core programming logic and interactivity.
 - Tailwind CSS: Modern utility-first CSS framework for rapid and clean styling.
 - HTML5 & CSS3: Structured semantic markup and custom styles.
