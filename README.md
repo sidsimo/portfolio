@@ -1,5 +1,5 @@
-![Uploading Screenshot_24-7-2026_01641_127.0.0.1.jpeg…]()
 
+![Uploading portfolio.jpeg…]()
 # 🌐 Personal Portfolio - Younes El Foudil
 
 Welcome to the repository of my personal portfolio website. This is a fully responsive, modern, and interactive portfolio built to showcase my front-end development skills, certifications, and projects.
