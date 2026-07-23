@@ -1,5 +1,5 @@
+<img width="1794" height="3353" alt="portfolio" src="https://github.com/user-attachments/assets/eb103bef-a653-4c7d-bd74-db2e458c679b" />
 
-![Uploading portfolio.jpeg…]()
 # 🌐 Personal Portfolio - Younes El Foudil
 
 Welcome to the repository of my personal portfolio website. This is a fully responsive, modern, and interactive portfolio built to showcase my front-end development skills, certifications, and projects.
