@@ -2,7 +2,7 @@
 
 Welcome to the repository of my personal portfolio website. This is a fully responsive, modern, and interactive portfolio built to showcase my front-end development skills, certifications, and projects.
 
-🚀 Live Demo: [Insert Your Live Link Here]
+🚀 Live Demo: https://sidsimo.github.io/portfolio/
 
 ---
 
